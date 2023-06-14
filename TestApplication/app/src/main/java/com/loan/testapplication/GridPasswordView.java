@@ -91,7 +91,9 @@ public class GridPasswordView extends AppCompatTextView {
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         initAttrs(context, attrs, defStyleAttr);
-        setTextIsSelectable(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            setTextIsSelectable(true);
+        }
         setFilters(null);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             Log.d(TAG,"====="+isCursorVisible());
@@ -222,10 +224,11 @@ public class GridPasswordView extends AppCompatTextView {
         final Paint linePaint = mLinePaint;
         linePaint.setColor(mLineColor);
         linePaint.setStrokeWidth(lineWidth);
+        // offsetLeft + lineWidth + xLineHeight2 + (xLineHeight + lineWidth) * i - textWidth / 2
         //绘制横线
         for (int i = 0; i < passwordLength + 1; i++) {
             Log.d(TAG,"hhhh====="+lineWidth2 +(xLineHeight + lineWidth) * i);
-            canvas.drawLine( lineWidth2 +(xLineHeight + lineWidth*2) * i +offsetLeft, (yLineHeight + lineWidth) + offsetTop,
+            canvas.drawLine( lineWidth +(xLineHeight + lineWidth*2) * i +offsetLeft, (yLineHeight + lineWidth) + offsetTop,
                     xLineHeight/2 + lineWidth2 + (xLineHeight + lineWidth*2  ) * i + offsetLeft, lineWidth2 + (yLineHeight + lineWidth) + offsetTop, linePaint);
         }
       /*  //绘制横线

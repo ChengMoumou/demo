@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.loan.testapplication.GridPasswordView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:cursorVisible="true"
-        app:gpCursorDrawable = "@drawable/my_cursor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.loan.testapplication.MyProgressBar
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/my_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:progress_color="@color/teal_200"
+        app:progress_width="30dp"
+        app:max="100"
+        app:round="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

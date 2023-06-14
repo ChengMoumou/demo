@@ -42,4 +42,14 @@
         <item name="android:layout_weight">1</item>
         <item name="android:singleLine">true</item>
     </style>
+
+    <declare-styleable name="MyProgressBar">
+        <attr name="progress_color" format="color" />
+        <attr name="progress_background_color" format="color" />
+        <attr name="round" format="dimension" />
+        <attr name="progress_width" format="dimension" />
+        <attr name="max" format="integer" />
+        <attr name="progress" format="integer" />
+    </declare-styleable>
+
 </resources>
